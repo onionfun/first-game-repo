@@ -10,13 +10,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.2/velocity.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.2/velocity.ui.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico|Permanent+Marker|Amatic+SC:700" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
-<div class="container">
-    <div class="fluid-container">
+<div class="container-fluid">
         <div class = 'start-game'>
             <h1 class="title">Welcome to Zugg Island </h1>
             <h2 class="expose"></h2>
@@ -24,30 +22,31 @@
                     <button class="btn btn-primary">Start Game!</button>
         </div>
     </div>
-    <div class="container container-fluid">
         <div class='character row'>
-            <div class="col-md-4">
+            <div class="col-md-4"><!-- other character pix -->
                 <h1> col 1</h1>
+                <h2 id='killer'></h2>
             </div>
-            <!-- other character pix -->
+            
             <div class="col-md-4">
                 <h1>col 2</h1>
             </div>
             <div class="col-md-4">
-                <h1>col 3</h1>
+                <h1 class="inventory">col 3</h1>
             </div>
         </div>
                 <!-- dialogue box at bottom -->    
         <div class="parent row">   
                 <div class="dialogue">
-                    <h2 class="text"> Click her -></h2>
+                    <div class="dialogue2"></div>
+                    <h2 class="text"> Click Jadwiga -></h2>
                 </div>
         </div> 
     </div>
 
         <div>
             <h2 class='pic'></h2>
-            <h2 class='killer'></h2>
+
         </div>
     
 </div>

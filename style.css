@@ -25,7 +25,7 @@ STEP BY STEP MINIMUM PODUCT OF IT
 }
 
 .killer{
-    position:fixed;
+    position: fixed;
     bottom:0px;
     right:50%;
 }
@@ -40,7 +40,7 @@ STEP BY STEP MINIMUM PODUCT OF IT
 }
 .dialogue{
     background-color:  rgba(248, 162, 3, 0.7);
-    top: 35rem;
+    top: 30rem;
     right: 4rem;
     position: absolute;
     border-radius: 25px;
@@ -51,7 +51,7 @@ STEP BY STEP MINIMUM PODUCT OF IT
     border: 4px;
     left: 0;
     z-index: 99;
-    font-family: 'Amatic SC', cursive;
+    font-family: 'Pacifico', cursive;
     font-size: 20px;
 }
 
@@ -61,3 +61,5 @@ STEP BY STEP MINIMUM PODUCT OF IT
     color: brown;
     text-shadow: 1px 1px #fc3636;
 }
+
+/* container-fluid is entire box then row then columns within rows */
