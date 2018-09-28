@@ -1,17 +1,16 @@
 HTML, body {
-    background-image: url('https://i.gifer.com/QACY.gif')
+    background-image: url('https://i.gifer.com/QACY.gif');
     /* https://i.pinimg.com/originals/f8/15/eb/f815eb14aed1bfaa9a1b3104346e35c9.gif
     https://i.pinimg.com/originals/9a/58/c3/9a58c343701abc80f7e1d5ec4142ab4d.gif */
+    /* background-repeat: no-repeat; */
+    /* position: fixed; */
+    bottom: 0;
 }
 /*
 BOOTSTRAP NOTES
 WIREFRAME OF WHAT THE GAME MIGHT LOOK LIKE
 STEP BY STEP MINIMUM PODUCT OF IT   
-
-
-
 */
-
 
 .title {
     color: red;
@@ -19,15 +18,18 @@ STEP BY STEP MINIMUM PODUCT OF IT
     text-shadow: 1px 1px #686868;
 }
 .pic {
-    position:fixed;
-    bottom:0px;
+    position:relative;
+    bottom: auto;
     left:50%;
+    vertical-align: right;
 }
 
 .killer{
-    position: fixed;
-    bottom:0px;
+    position: relative;
+    bottom:auto;
     right:50%;
+    vertical-align: left;
+    /* background-repeat: no-repeat; */
 }
 .name{
     position: relative;
@@ -37,12 +39,12 @@ STEP BY STEP MINIMUM PODUCT OF IT
 }
 .parent {
     position: relative;
+    bottom: 0;
 }
 .dialogue{
-    background-color:  rgba(248, 162, 3, 0.7);
-    top: 30rem;
+    background-color:  rgba(248, 162, 3, 0.5);
     right: 4rem;
-    position: absolute;
+    /* position: absolute; */
     border-radius: 25px;
     width: 50%;
     padding: 10px;
