@@ -12,3 +12,6 @@ Ability to click answer no. 1 or no. 2
 
 May add inventory and items, if time permits.
 May add clickable background elements. Or maybe the clues are in the back ground.
+
+
+![alt text](http://m.imgur.com/vOh21wg)
