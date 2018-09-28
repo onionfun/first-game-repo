@@ -14,4 +14,4 @@ May add inventory and items, if time permits.
 May add clickable background elements. Or maybe the clues are in the back ground.
 
 
-![alt text](http://m.imgur.com/vOh21wg)
+![wire frame](https://i.imgur.com/V2xiFJk.jpg)
