@@ -40,7 +40,7 @@ STEP BY STEP MINIMUM PODUCT OF IT
 }
 .dialogue{
     background-color:  rgba(248, 162, 3, 0.7);
-    top: 40rem;
+    top: 35rem;
     right: 4rem;
     position: absolute;
     border-radius: 25px;
@@ -51,4 +51,13 @@ STEP BY STEP MINIMUM PODUCT OF IT
     border: 4px;
     left: 0;
     z-index: 99;
+    font-family: 'Amatic SC', cursive;
+    font-size: 20px;
+}
+
+.expose{
+    font-family: 'Amatic SC', cursive;
+    font-weight: bold;
+    color: brown;
+    text-shadow: 1px 1px #fc3636;
 }
