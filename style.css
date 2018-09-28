@@ -1,0 +1,54 @@
+HTML, body {
+    background-image: url('https://i.gifer.com/QACY.gif')
+    /* https://i.pinimg.com/originals/f8/15/eb/f815eb14aed1bfaa9a1b3104346e35c9.gif
+    https://i.pinimg.com/originals/9a/58/c3/9a58c343701abc80f7e1d5ec4142ab4d.gif */
+}
+/*
+BOOTSTRAP NOTES
+WIREFRAME OF WHAT THE GAME MIGHT LOOK LIKE
+STEP BY STEP MINIMUM PODUCT OF IT   
+
+
+
+*/
+
+
+.title {
+    color: red;
+    font-family: Permanent Marker, cursive;
+    text-shadow: 1px 1px #686868;
+}
+.pic {
+    position:fixed;
+    bottom:0px;
+    left:50%;
+}
+
+.killer{
+    position:fixed;
+    bottom:0px;
+    right:50%;
+}
+.name{
+    position: relative;
+    color: royalblue;
+    font-family: Permanent Marker, cursive;
+    text-shadow: 1px 1px #686868;
+}
+.parent {
+    position: relative;
+}
+.dialogue{
+    background-color:  rgba(248, 162, 3, 0.7);
+    top: 40rem;
+    right: 4rem;
+    position: absolute;
+    border-radius: 25px;
+    width: 50%;
+    padding: 10px;
+    margin: 0 auto;
+    text-align: center;
+    border: 4px;
+    left: 0;
+    z-index: 99;
+}
