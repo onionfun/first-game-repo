@@ -23,7 +23,7 @@
         </div>
     </div>
         <div class='character row'>
-            <div class="col-md-4"><!-- other character pix -->
+            <div class="col-md-4"> <!--other character pix--> 
                 <div id='killer'></div>
 
                 <h1> col 1</h1>
@@ -39,19 +39,20 @@
                     <br />
                     REPULSION:<span class="repulsion"></span>
                     <br />
-                    PROGRESS:<span class="progress">0%</span>
+                    PROGRESS:<span id="progress"></span>
 
             </h1>
             </div>
         </div>
-                <!-- dialogue box at bottom -->    
+                <!-- dialogue box at bottom  -->   
         <div class="parent row">   
-                <div class="dialogue">
-                    <span class='repulse'></span>
+                <p class="dialogue">
+                    <span class='repulse'></span> 
+                    <!-- make button with id of option 1 or 2 make button in JS hard code box class make and p tag class dialogue -->
                     <span class='charm'></span>
-                    <div class="dialogue2"></div>
-                    <h2 class="text"> Click Jadwiga -></h2>
-                </div>
+                    <!-- <div class="dialogue2"></div> -->
+                    Click Jadwiga ->
+                </p>
         </div> 
     </div>
 
@@ -62,12 +63,28 @@
     
 </div>
 
-    <!-- <div class="container">
+     <!-- <div class="container">
         <div class="scoreboard">
             <button class="btn btn-primary"></button>
         </div>
-    </div> -->
+    </div>  -->
+    <!-- <div class="game">
+            <h1>Blackjack</h1>
+            <input type="button" class="btn" value="start" onclick="start()" />
+            <input type="button" class="btn" value="hit me" onclick="hitMe()" />
+            <input type="button" class="btn" value="stay" onclick="stay()" /> 
+        
+            <div id="players" class="players">
+    </div>
 
+    <div id="deck" class="deck">
+        <div class="card" id="deckcount">52</div>
+        <div class="status" id="status"></div>
+    </div>
+
+    <div class="clear"></div>
+</div>
+-->
 
     <script src="javascript/game1.js"></script>
 </body>
