@@ -57,11 +57,31 @@ STEP BY STEP MINIMUM PODUCT OF IT
     font-size: 20px;
 }
 
+.inventory{
+    background-color:  rgba(248, 162, 3, 0.5);
+    /* right: 4rem; */
+    /* position: absolute; */
+    border-radius: 25px;
+    width: 50%;
+    padding: 10px;
+    margin: 0 auto;
+    text-align: center;
+    border: 4px;
+    left: 0;
+    z-index: 99;
+    font-family: 'Amatic SC', cursive;
+    font-size: 20px;
+}
+
 .expose{
     font-family: 'Amatic SC', cursive;
     font-weight: bold;
     color: brown;
     text-shadow: 1px 1px #fc3636;
 }
+
+/* .charisma {
+    
+} */
 
 /* container-fluid is entire box then row then columns within rows */
