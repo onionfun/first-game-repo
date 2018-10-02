@@ -1,0 +1,14 @@
+.square {
+    height: 50px;
+    width: 50px;
+    background-color: grey;
+    margin: 1px;
+    border: 1px;
+    border-color: rgba(68, 68, 68, 0.801)
+}
+/* #ship {
+    background-color: red;
+}
+.laser {
+    background-color: yellow;
+} */
