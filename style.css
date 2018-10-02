@@ -18,15 +18,16 @@ STEP BY STEP MINIMUM PODUCT OF IT
     text-shadow: 1px 1px #686868;
 }
 .pic {
-    position:relative;
-    bottom: auto;
+    position: fixed;
+    bottom: 0;
     left:50%;
     vertical-align: right;
 }
 
-.killer{
-    position: relative;
-    bottom:auto;
+#killer{
+    position:fixed;
+    /* bottom: auto; */
+    top: 12rem;
     right:50%;
     vertical-align: left;
     /* background-repeat: no-repeat; */
@@ -44,13 +45,14 @@ STEP BY STEP MINIMUM PODUCT OF IT
 .dialogue{
     background-color:  rgba(248, 162, 3, 0.5);
     right: 4rem;
-    /* position: absolute; */
+    position: absolute;
     border-radius: 25px;
     width: 50%;
     padding: 10px;
     margin: 0 auto;
     text-align: center;
     border: 4px;
+    bottom: 0;
     left: 0;
     z-index: 99;
     font-family: 'Pacifico', cursive;

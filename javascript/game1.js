@@ -34,7 +34,7 @@ const dialogue = ['0 Thank you for meeting me, detective.  Someone killed my sis
 "All right, we'll check that out, where can I reach you in the meantime?",
 "JOHN: Here's my phone and address.  If I'm not at one of my restaurants, I'm probably with the Jaycees.",
 "Perfect, I'll check on that.", 
-"John always helps out the community, I don't think they could hurt a fly!",
+"John always helps out the community, and always is the first one to help, I can see him doing this!",
 "Click Jadwiga after you've decided: ",
 "All right, let me check on these alibis and I'll get back with you tomorrow, Jadwiga.", 
 "Ok, I'll meet you here tomorrow!",
@@ -42,7 +42,21 @@ const dialogue = ['0 Thank you for meeting me, detective.  Someone killed my sis
 " ~ 12 hours later ~ ",
 "Detective!  Should we find Ed today?", 
 "Yes, I've call him in, should be here any minute now.", 
-"ED: Heidi Ho neighbor!"];
+"ED: Uhh hey... Jadwiga... w-what are you doing here?",
+"Hey Ed, I'm just here hepling in where ever I can. I believe the detective has some questions for you.",
+"ED: Uh o-ok.",
+"All right, Ed, where were you the night of October 1st?",
+"ED: Where I always am, detective, I was, uh, a-at home with mother.",
+"Can she verify that?",
+"ED: Well, I'll have to ask her if she'll let visitors in the house, and then you can ask her.",
+"All right, Ed, why don't you call her and we'll go down there together.",
+"ED: O-oh, ok, I'll call her right now.",
+"Ed wouldn't hurt a fly, he's a defnite mama's boy.",
+"Click Jadwiga after you've decided: ",
+"ED: Mother said she'll let you come over.",
+" ~ She verifies Ed's alibi ~ ",
+"Who do you think did it?"
+];
 let stage = 0;
 onClick=() =>{
     if($('.pic').on('click')){
@@ -55,7 +69,7 @@ onClick=() =>{
 // count = 0;
 // $('.pic').onclick = ()=> {
 // count +=1;
-// };
+// }; each class has a (hasClass) function to do collision
 
 let charisma = 0;
 let repulsion = 0;
@@ -64,6 +78,11 @@ const $nameInput = $('input').val();
 $('body').on('click',  '.jeff', '.john', ()=>{ 
     repulsion+=6;
     document.getElementById("repulsion").innerHTML = repulsion;
+
+});
+$('body').on('click',  '.ed', ()=>{ 
+    charisma+=6;
+    document.getElementById("charisma").innerHTML = charisma;
 
 });
 
@@ -132,7 +151,18 @@ advanceDialogue: ()=>{
             $('.dialogue').append('<button class="no btn-success">I disagree</button>');
         }
         if(stage===37){
-            $("#killer").append('<img src = "Images/ed-gein.png"></img>');
+            $("#killer").append('<img src = "Images/ed-gein-2.png"></img>');
+        }
+        if(stage===47){
+            $('#killer').empty();
+            $('.dialogue').append('<button class="yes btn-primary">I agree</button>');
+            $('.dialogue').append('<button class="no btn-success">I disagree</button>');
+        }
+        if(stage===50){
+            $('.dialogue').append('<button class="jeff btn-primary">Jeff</button>');
+            $('.dialogue').append('<button class="john btn-success">John</button>');
+            $('.dialogue').append('<button class="ed btn-info">Ed</button>');
+        }
 
 
 
@@ -144,22 +174,27 @@ advanceDialogue: ()=>{
 
         if(repulsion >= 3){
         events.gameover();
+        }
+        if(charisma >= 6){
+            events.endgame();
     }
     
-    })
+})
 },
 
 endgame: ()=>{
     $('body').empty()
     $('body').css('background-image', 'url("https://i.ytimg.com/vi/GzyrLdSS3WY/maxresdefault.jpg")');
-    $('body').append('<h1 class="end">Ed was the killer along, good job</h1>')
+    $('body').append('<h1 class="end">Ed was the killer!</h1>');
+    $('body').append('<h2="ending"></h2>');
+    $('h2').append('<img src = "https://78.media.tumblr.com/a83f0c57c984d0efb2f5c0c3b7b3d883/tumblr_otp2j48Ogy1w1y15so1_500.gif"></img>')
 
 },
 
 gameover: ()=>{
     $('body').empty()
     $('body').css('background-image', 'url("https://i.ytimg.com/vi/GzyrLdSS3WY/maxresdefault.jpg")');
-    $('body').append('<h1 class="end">YOU were too repulsive and Jadwiga killed you</h1>')
+    $('body').append('<h1 class="end">YOU were too arrogant and the killer goes uncaught...</h1>')
 
         }
 };
