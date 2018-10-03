@@ -3,8 +3,19 @@
     width: 50px;
     background-color: grey;
     margin: 1px;
-    border: 1px;
-    border-color: rgba(68, 68, 68, 0.801)
+    border-style: outset;
+    border-color: rgba(68, 68, 68, 0.801);
+}
+
+.header{
+    font-family: Papyrus, fantasy;
+    font-weight: bold;
+}
+.button {
+    display: flex; 
+    justify-content: center;
+    position: relative;
+    z-index: auto
 }
 /* #ship {
     background-color: red;
