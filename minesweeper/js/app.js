@@ -1,27 +1,38 @@
-const gameBoard =[
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-]
-for (let i = 0; i < gameBoard.length; i++) {
-    let row = gameBoard[i]; 
-    for (let i = 0; i < gameBoard.length; i++) {
-        let choice = Math.random();
-    if(choice < .15){
-        row.push(1);
-    } else {
-        row.push(0);
-    }
-    $('.square').data(gameBoard, 1)
-}}
-console.log(gameBoard)
+// const gameBoard =[
+//     [],
+//     [],
+//     [],
+//     [],
+//     [],
+//     [],
+//     [],
+//     [],
+//     [],
+//     [],
+// ]
+
+
+
+
+$('button').on('click', () => {
+    let seconds = 99;
+  const timePassing = setInterval (()=>{
+      seconds--;
+      if(seconds<=0){
+        $('.youDied').modal();
+        $('.dedRestartBtn').on('click', ()=>{
+            window.location.reload(true);
+        })
+      seconds = 99;
+      }
+      $('button').remove();
+  console.log(seconds)
+  $('.timer').text(`Timer: ${seconds}`)  
+  }, 1000)
+  }
+  );
+
+// console.log(gameBoard)
 
 for(let y = 1; y < 11; y++){
     $('.game').append(`<div class='game-column game-column-${y}'></div>`)
@@ -35,39 +46,108 @@ for(let y = 1; y < 11; y++){
         gameSquare.attr('y', x);
     }
 }
+for (let j = 1; j < 11; j++) { 
+    for (let i = 1; i < 11; i++) {
+        let choice = Math.random();
+    if(choice < .15){
+    $(`.square-${j}-${i}`).addClass('mine');   
+}
+}};
+//draw gameBoard location to corresponding grid piece
+//$(`square-${y}-${x}`).data(gameBoard[i][i]) given square at x,y find the corresponding array value at [i][i]
+//get coordinates from the div and set them equal to the value of the corresponding array
+//set array value to bomb if 1
+//well you can get the element you click at, then you need a good way to reference if there is a mine there
+//if e.target is touching 1>mine gamesquare.text(1)
+
 
 $('.square').on('click', (e)=>{
     console.log(e.currentTarget)
-    let userX = $(e.currentTarget).attr('x') //grabbing coordinates when I click square
-    let userY = parseInt($(e.currentTarget).attr('y'))
+    let userX = Number($(e.currentTarget).attr('x')); //grabbing coordinates when I click square
+    let userY = Number(($(e.currentTarget).attr('y')));
     console.log(`user clicked ${userX} and ${userY}`)
-    gameBoard[gameBoard.length - 0 - userY][userX]
-
-
-    if(gameBoard === 1){
-        console.log("ham");
+    // console.log(`corresponds with row ${gameBoard.length - userY}`)
+    // const clicked = gameBoard[gameBoard.length - userY][userX - 1]
+    //if(clicked === 1){
+        if($(e.currentTarget).hasClass('mine')){
+        $(e.currentTarget).css('background-color', 'red')
+        $('.youDied').modal();
+        $('.dedRestartBtn').on('click', ()=>{
+            window.location.reload(true);
+        })
+        
+    } else {
+    // console.log(clicked);
+    $(e.currentTarget).css('border-style', 'inset').css('background-color', 'darkgray')
     }
-    $(e.currentTarget).css('background-color', 'black')
-    console.log(gameBoard)
-//find the appropriate square in the js gameboard, comparing virtual gameboard with what they just clicked, see whether x,y is a 1 or 0
-//x coord can stay the same. x can be the same but y has to start at the bottom gameboard.length-1(if you want fow 0) userY
+    clickCheck(userX, userY);
+    //if total board clicked -mines  = 0, winner
+    if(((userX * userY)-$('.mine'))===(userX * userY)){
+        alert("you won");
+    }
 });
 
 
-$('button').on('click', () => {
-  let seconds = 99;
-const timePassing = setInterval (()=>{
-    seconds--;
-    if(seconds<=0){
-        alert("Ya burnt");
-    seconds = 99;
+
+const clickCheck = (x, y) =>{
+    //look at surrounding square to see if there's a 1 in them add one to count of mines
+    let mines = 0; //append mines to the buttons
+    if($(`.square-${x+1}-${y+1}`).hasClass('mine')){
+        mines++
+    }if($(`.square-${x+1}-${y}`).hasClass('mine')){
+        mines++
+    }if($(`.square-${x+1}-${y-1}`).hasClass('mine')){
+    mines++
+    }if($(`.square-${x}-${y+1}`).hasClass('mine')){
+    mines++
+    }if($(`.square-${x}-${y-1}`).hasClass('mine')){
+    mines++
+    }if($(`.square-${x-1}-${y+1}`).hasClass('mine')){
+    mines++
+    }if($(`.square-${x-1}-${y}`).hasClass('mine')){
+    mines++
+    }if($(`.square-${x-1}-${y-1}`).hasClass('mine')){
+    mines++
     }
-    $('button').remove();
-console.log(seconds)
-$('.timer').text(`Timer: ${seconds}`)  
-}, 1000)
+    $(`.square-${x}-${y}`).text(mines);
 }
-);
+//     if(gameBoard[11-y][x-1]){   //x and y are mirrored
+//     if(gameBoard[11-y][x-1]===1){
+//         mines++;
+//     }
+//     }
+//     if(gameBoard[10-y][x-1]){   //x and y are mirrored
+//         if(gameBoard[10-y][x-1]===1){
+//             mines++;
+//         }
+//         }  
+//     if(gameBoard[11-y][x-2]){   //x and y are mirrored
+//     if(gameBoard[11-y][x-2]===1){
+//         mines++;
+//     }
+//     }
+//     if(gameBoard[11-y][x]){   //x and y are mirrored
+//         if(gameBoard[11-y][x]===1){
+//             mines++;
+//         }
+//     }
+//     if(gameBoard[10-y][x]){   //x and y are mirrored
+//         if(gameBoard[10-y][x]===1){
+//             mines++;
+//         }
+//     console.log(`MINES ARE ${mines}`);
+//     }  
+// }
+//     // if(clicked + 1 === 1 && clicked - 1 === 1){
+//     //     console.log("TWO");
+//     // }
+// //find the appropriate square in the js gameboard, comparing virtual gameboard with what they just clicked, see whether x,y is a 1 or 0
+// //x coord can stay the same. x can be the same but y has to start at the bottom gameboard.length-1(if you want fow 0) userY
+
+
+// //if neighbors look at gameboard array and look at all the neighbors  up down left right to see if it's a one
+
+
 
 
 

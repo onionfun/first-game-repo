@@ -8,7 +8,7 @@
 const dialogue = ['0 Thank you for meeting me, detective.  Someone killed my sister and I need your help finding out which one of my neighbors did it!',
  "My first neighbor, Jeff, is from WI, and usually hangs out with boys only, but I saw my sister at his house not long before she died.", 
  "My second neighbor, John, is from IL, and is a community leader, but he likes clowns too much and can't be trusted.", 
- "My third neighbor, Ed, is also from WI, and mostly keeps to himself, working in his crafting shop.", 
+ "My third neighbor, Rob and his twin Steve, from NY, and mostly keep to themselves, working in their crafting shop.", 
  "JEFF: Jadwiga, what are you doing here?", 
  "I'm getting help from the detective about my sister.",
  "JEFF: Sorry to hear that. Tragic stuff, how are you holding up?", 
@@ -40,21 +40,21 @@ const dialogue = ['0 Thank you for meeting me, detective.  Someone killed my sis
 "Ok, I'll meet you here tomorrow!",
 "Jeff looks clean, he's under a lot of scrutiny being on parole, and John's alibi checked out between the Jaycees and his partner.  That leaves one last suspect: Ed.",
 " ~ 12 hours later ~ ",
-"Detective!  Should we find Ed today?", 
+"Detective!  Should we find the twins today?", 
 "Yes, I've call him in, should be here any minute now.", 
-"ED: Uhh hey... Jadwiga... w-what are you doing here?",
-"Hey Ed, I'm just here hepling in where ever I can. I believe the detective has some questions for you.",
-"ED: Uh o-ok.",
-"All right, Ed, where were you the night of October 1st?",
-"ED: Where I always am, detective, I was, uh, a-at home with mother.",
+"ROB: Uhh hey... Jadwiga... w-what are you doing here?",
+"Hey guys, I'm just here hepling in where ever I can. I believe the detective has some questions for you.",
+"STEVE: Uh o-ok.",
+"All right, guys, where were you the night of October 1st?",
+"ROB: Where I always am, detective, I was, uh, a-at home with mother.",
 "Can she verify that?",
-"ED: Well, I'll have to ask her if she'll let visitors in the house, and then you can ask her.",
-"All right, Ed, why don't you call her and we'll go down there together.",
-"ED: O-oh, ok, I'll call her right now.",
-"Ed wouldn't hurt a fly, he's a defnite mama's boy.",
+"STEVE: Well, I'll have to ask her if she'll let visitors in the house, and then you can ask her.",
+"All right, guys, why don't you call her and we'll go down there together.",
+"ROB: O-oh, ok, I'll call her right now.",
+"They wouldn't hurt a fly, they're defnite mama's boys.",
 "Click Jadwiga after you've decided: ",
-"ED: Mother said she'll let you come over.",
-" ~ She verifies Ed's alibi ~ ",
+"STEVE: Mother said she'll let you come over.",
+" ~ You verify their alibi ~ ",
 "Who do you think did it?"
 ];
 let stage = 0;
@@ -75,9 +75,12 @@ let charisma = 0;
 let repulsion = 0;
 let progress = 0;
 const $nameInput = $('input').val();
-$('body').on('click',  '.jeff', '.john', ()=>{ 
+$('body').on('click',  '.jeff', ()=>{ 
+    events.gameover();
     repulsion+=6;
     document.getElementById("repulsion").innerHTML = repulsion;
+    // repulsion+=6;
+    // document.getElementById("repulsion").innerHTML = repulsion;
 
 });
 $('body').on('click',  '.ed', ()=>{ 
@@ -110,7 +113,7 @@ $('button').on('click', () => {
   }
 );
 // button.innerHTML = "Click me: " + count;
-//^^^^^^^^^^^^^Make an array over which to iterate the dialogue
+//^^^^^^^^^^^^^Make an array over which to iterate the dialogue  JEFF AND JOHN NEED TO HAVE END GAME
 //inventory, charisma and repulsiveness at top character changes to bloody if 5 repulsive 10 Q and As 2 each
 
 const fram = "junk"
@@ -160,8 +163,8 @@ advanceDialogue: ()=>{
         }
         if(stage===50){
             $('.dialogue').append('<button class="jeff btn-primary">Jeff</button>');
-            $('.dialogue').append('<button class="john btn-success">John</button>');
-            $('.dialogue').append('<button class="ed btn-info">Ed</button>');
+            $('.dialogue').append('<button class="jeff btn-success">John</button>');
+            $('.dialogue').append('<button class="ed btn-info">Rob/Steve</button>');
         }
 
 
@@ -185,7 +188,7 @@ advanceDialogue: ()=>{
 endgame: ()=>{
     $('body').empty()
     $('body').css('background-image', 'url("https://i.ytimg.com/vi/GzyrLdSS3WY/maxresdefault.jpg")');
-    $('body').append('<h1 class="end">Ed was the killer!</h1>');
+    $('body').append('<h1 class="end">The twins were the killer!</h1>');
     $('body').append('<h2="ending"></h2>');
     $('h2').append('<img src = "https://78.media.tumblr.com/a83f0c57c984d0efb2f5c0c3b7b3d883/tumblr_otp2j48Ogy1w1y15so1_500.gif"></img>')
 
@@ -200,8 +203,10 @@ gameover: ()=>{
 };
 
 
-
-
+//html is like an object that we can throw things intousing attribute to make it look like an object, the div holeds 
+//it and can reset it HTML to behave like JS stored in keys called attributs and the values are whatever you set the attribute to storing info
+//.attr("id") = getting the id
+//.attr("id", "part") = setting the id to part
 /*events ={
     startgame: ()=>{
  //$pic.on(click ){
