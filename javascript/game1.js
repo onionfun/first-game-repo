@@ -15,10 +15,10 @@ const dialogue = ['0 Thank you for meeting me, detective.  Someone killed my sis
  "I'm doing all right, just trying to find answers, can we ask you some questions?",
  "JEFF: Sure",
  "Where were you the night of October the 1st?",
- "JEFF, placing his hand behind his head: Well, much to my embarassment, I'm on parole, you can check with PO Chester about that. As far as where I was... I was at El Potrero night club, you can find me there most nights of the week.",
- "I'll look into that, thanks",
- "JEFF: Anytime, if you need any more help, here's my number, feel free to call day or night.",
- "Will do.",
+ "JEFF, placing his hand behind his head: Well, much to my chagrin, I'm on parole, you can check with PO Chester about that. As far as where I was... I was at El Potrero night club, you can find me there most nights of the week.",
+ "I'll look into that, thanks", //does that violate the conditions of your parole?
+ "JEFF: Anytime, if you need any more help, here's my number, feel free to call day or night.", //
+ "Will do.", //
  "He seemed open and accomodating about the investigation, wouldn't you say?",
 'Click Jadwiga after you have decided: ', 
 "Ok. Why don't I tell you about John.", 
@@ -57,6 +57,19 @@ const dialogue = ['0 Thank you for meeting me, detective.  Someone killed my sis
 " ~ You verify their alibi ~ ",
 "Who do you think did it?"
 ];
+const dialogueTwo = [
+    {one: "use when talking to Jeff: Does that violate the conditions of your parole?", two: "Thanks, I'll look into that.", three: "And being in a bar doesn't make it tempting?", four: "you seem like you have a decent amount of self control", five: "so if I pull up those drug tests, nothing suspicious will show up? I know where someone can get a lof of fake urine.", six:"You mind if we call your PO right now?"},
+
+    {seven: "speak of the devil...", eight: "in what capacity do you work with the jaycees?", nine: "can your partner verify what time you got home?"}
+];
+
+//jeff first
+const answers = [
+    {one: "well not exactly, I'm allowed to go to bars, I do get drug tests so I try not to drink...", three: "it is tempting, but like I said, I get drug tested.", four: "I like to think I do.", five: "Didn't even know you could buy that kind of stuff.", six: "Not at all, she'll say the same thing I did."},
+
+    {seven:"and here I am!", eight: "well I'm acting secretary, head up the volunteering and events like the one tonight.", nine: "they were with me that night, but I don't know if they can verify."}
+];
+// console.log(dialogueTwo[0].one)
 let stage = 0;
 onClick=() =>{
     if($('.pic').on('click')){
